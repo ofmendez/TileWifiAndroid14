@@ -17,6 +17,7 @@ local.properties
 *.apk
 *.ap_
 *.aab
+*.swp
 
 # files for the dex VM
 *.dex
