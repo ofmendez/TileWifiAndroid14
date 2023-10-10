@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,9 +23,9 @@
             </intent-filter>
         </activity>
         <service
-            android:exported="false"
+            android:exported="true"
             android:name=".MyTileService"
-            android:icon="@drawable/ic_tile_calendar"
+            android:icon="@drawable/antenna"
             android:label="@string/of_wifi_tile_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
 
@@ -32,6 +33,10 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+        <meta-data android:name="android.service.quick-settings.TOGGLEABLE_TILE"
+            android:value="true" />
+        <meta-data android:name="android.service.quick-settings.ACTIVE_TILE"
+            android:value="true" />
     </application>
 
 </manifest>
